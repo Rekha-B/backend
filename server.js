@@ -7,6 +7,14 @@ import itemRoutes from './routes/itemRoutes.js';
 // Load environment variables
 dotenv.config();
 
+// Validate required environment variables
+if (!process.env.MONGODB_URI) {
+  console.error('❌ Error: MONGODB_URI environment variable is not set!');
+  console.error('Please create a .env file in the backend directory.');
+  console.error('You can copy env.example to .env and update it with your MongoDB connection string.');
+  process.exit(1);
+}
+
 // Initialize Express app
 const app = express();
 

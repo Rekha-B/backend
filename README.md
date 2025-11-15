@@ -33,15 +33,28 @@ A RESTful API built with Node.js, Express.js, and MongoDB for performing basic C
    ```
 
 3. **Set up environment variables:**
+   
+   **Option A: Use setup script (Recommended)**
    ```bash
-   cp .env.example .env
+   # Windows PowerShell
+   .\setup-env.ps1
    ```
    
-   Edit `.env` file and update the MongoDB connection string:
+   **Option B: Manual setup**
+   ```bash
+   cp env.example .env
+   ```
+   
+   Then edit `.env` file and update the MongoDB connection string:
    ```env
    PORT=5000
    MONGODB_URI=mongodb://localhost:27017/crud-db
    NODE_ENV=development
+   ```
+   
+   **For MongoDB Atlas**, use:
+   ```env
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database-name?retryWrites=true&w=majority
    ```
 
 4. **Start MongoDB:**
@@ -246,6 +259,15 @@ You can test the API using:
 - **cURL** - Use command-line requests
 - **Browser** - For GET requests
 - **Thunder Client** (VS Code extension)
+
+## Troubleshooting
+
+If you encounter issues, see [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for common problems and solutions.
+
+**Common issues:**
+- `MONGODB_URI is undefined` - Check `.env` file exists and is configured correctly
+- Connection timeout - Verify MongoDB is running or Atlas connection string is correct
+- Port already in use - Change PORT in `.env` file
 
 ## Deployment
 
