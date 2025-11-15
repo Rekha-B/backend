@@ -1,0 +1,20 @@
+name: nodejs-mongodb-api
+services:
+  - name: api
+    github:
+      repo: YOUR_USERNAME/YOUR_REPO
+      branch: main
+      deploy_on_push: true
+    source_dir: /backend
+    build_command: npm install
+    run_command: npm start
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: ${MONGODB_URI}
+        scope: RUN_TIME
+

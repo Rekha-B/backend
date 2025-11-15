@@ -37,10 +37,15 @@ sudo systemctl start mongod
 ```
 
 ### Option B: MongoDB Atlas (Cloud)
+**See [MONGODB_ATLAS_SETUP.md](./MONGODB_ATLAS_SETUP.md) for complete step-by-step instructions.**
+
+**Quick steps:**
 1. Sign up at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a free cluster
-3. Get your connection string
-4. Update `.env` with your connection string:
+2. Create a free M0 cluster
+3. Create a database user
+4. Whitelist your IP address
+5. Get your connection string
+6. Update `.env` with your connection string:
 ```env
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database-name?retryWrites=true&w=majority
 ```

@@ -46,7 +46,10 @@ A RESTful API built with Node.js, Express.js, and MongoDB for performing basic C
 
 4. **Start MongoDB:**
    - **Local MongoDB:** Make sure MongoDB is running on your local machine
-   - **MongoDB Atlas:** Use your Atlas connection string in `.env`
+   - **MongoDB Atlas:** See [MONGODB_ATLAS_SETUP.md](./MONGODB_ATLAS_SETUP.md) for detailed step-by-step instructions
+     - Create a free cluster
+     - Get your connection string
+     - Update `.env` with your Atlas connection string
 
 5. **Run the application:**
    ```bash
@@ -192,10 +195,15 @@ curl -X DELETE http://localhost:5000/api/items/ITEM_ID
    ```
 
 ### MongoDB Atlas (Cloud)
+See [MONGODB_ATLAS_SETUP.md](./MONGODB_ATLAS_SETUP.md) for complete step-by-step instructions.
+
+**Quick steps:**
 1. Create a free account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a cluster
-3. Get your connection string
-4. Update `.env`:
+2. Create a free M0 cluster
+3. Create a database user
+4. Whitelist your IP address
+5. Get your connection string
+6. Update `.env`:
    ```env
    MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database-name?retryWrites=true&w=majority
    ```
@@ -238,6 +246,18 @@ You can test the API using:
 - **cURL** - Use command-line requests
 - **Browser** - For GET requests
 - **Thunder Client** (VS Code extension)
+
+## Deployment
+
+Deploy your API to the cloud! See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed guides.
+
+**Quick deploy options:**
+- **Railway** - Easiest, recommended for beginners
+- **Render** - Free tier available
+- **Heroku** - Popular platform
+- **DigitalOcean** - Good balance of features
+
+**Quick start:** See [DEPLOY_QUICK_START.md](./DEPLOY_QUICK_START.md)
 
 ## License
 
